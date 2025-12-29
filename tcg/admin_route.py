@@ -9,6 +9,10 @@ from tcg.models import db,ServiceCategory,ServiceSubcategory,Admin,QuoteRequest,
 from tcg.form import AdminLoginForm,QuoteForm
 from tcg.utils import generate_temp_password 
 
+@app.after_request
+def after_request(resp):
+    resp.headers['Cache-Control']='no-cache,no-store,must-revalidate'
+    return resp
 
 def admin_required(f):
     @wraps(f)
@@ -32,6 +36,7 @@ def admin_home():
 
 #this is the admin dashboard route
 @app.route('/admin/dashboard')
+@admin_required
 def admin_dashboard():
     total_categories = ServiceCategory.query.count()
     total_subcategories = ServiceSubcategory.query.count()
@@ -63,8 +68,9 @@ def admin_login():
                 stored_password=admin_details.admin_pwd
                 check_password= check_password_hash(stored_password,password)
                 if check_password ==True:
+                    session.clear()
                     session['adminonline']=admin_details.admin_id
-                    return redirect('/admin/')
+                    return redirect('/admin/dashboard')
                 else: #comes here if the password is wrong 
                     flash('Invalid Login Password', category='error')
                     return redirect(url_for('admin_login'))

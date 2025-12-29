@@ -21,6 +21,10 @@ from tcg.form import QuoteForm,ContactForm
 
 #     return render_template('users/index.html', form=form)
 
+@app.after_request
+def after_request(resp):
+    resp.headers['Cache-Control']='no-cache,no-store,must-revalidate'
+    return resp
 
 @app.route('/')
 def home_page():

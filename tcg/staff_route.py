@@ -10,6 +10,11 @@ from tcg.form import AdminLoginForm,QuoteForm
 from tcg.utils import generate_temp_password 
 
 
+@app.after_request
+def after_request(resp):
+    resp.headers['Cache-Control']='no-cache,no-store,must-revalidate'
+    return resp
+
 # this is the staff login route 
 @app.route('/staff/login/', methods=['GET', 'POST'])
 def staff_login():
@@ -26,8 +31,8 @@ def staff_login():
                 return redirect(url_for('staff_login'))
 
             # Save login to session
+            session.clear()
             session['staff_id'] = staff.id
-            session['staff_role'] = staff.role
 
             return redirect(url_for('staff_dashboard'))
 

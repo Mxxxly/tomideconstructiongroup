@@ -11,7 +11,10 @@
     <div class="container">
         <div class="row">
             <div class="col-md-10 offset-md-1">
-                <h2>Admin Login</h2>
+                <div class="d-flex justify-content-between">
+                    <h2 class="text-center"> TCG Admin Login</h2>
+                    <a href="{{url_for(('home_page'))}}">Home Page</a>
+                </div>
                 <form action="" method="post">
                     {%set feedback=get_flashed_messages(with_categories=True)%}
                     {%for cat,message in feedback %}
