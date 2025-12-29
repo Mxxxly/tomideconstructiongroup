@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>UpConstruction Bootstrap Template - About</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{{url_for('static', filename='assets/img/favicon.png')}}" rel="icon">
+  <link href="{{url_for('static', filename='assets/img/apple-touch-icon.png')}}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Roboto:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{{url_for('static', filename='assets/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+  <link href="{{url_for('static', filename='assets/vendor/bootstrap-icons/bootstrap-icons.css')}}" rel="stylesheet">
+  <link href="{{url_for('static', filename='assets/vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet">
+  <link href="{{url_for('static', filename='assets/vendor/aos/aos.css')}}" rel="stylesheet">
+  <link href="{{url_for('static', filename='assets/vendor/glightbox/css/glightbox.min.css')}}" rel="stylesheet">
+  <link href="{{url_for('static', filename='assets/vendor/swiper/swiper-bundle.min.css')}}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{{url_for('static', filename='assets/css/main.css')}}" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: UpConstruction - v1.3.0
+  * Template URL: https://bootstrapmade.com/upconstruction-bootstrap-construction-website-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header d-flex align-items-center">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.png" alt=""> -->
+        <h1>UpConstruction<span>.</span></h1>
+      </a>
+
+      <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+      <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a href="{{url_for('home_page')}}" class="active">Home</a></li>
+          <li><a href="{{url_for('about')}}">About</a></li>
+          <!-- <li><a href="services.html">Services</a></li> -->
+             <li class="dropdown"><a href="{{url_for('services')}}"><span>Services</span> <i
+                class="bi bi-chevron-down dropdown-indicator"></i></a>
+            <ul>
+              <li><a href="#">Dropdown 1</a></li>
+              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i
+                    class="bi bi-chevron-down dropdown-indicator"></i></a>
+                <ul>
+                  <li><a href="#">Deep Dropdown 1</a></li>
+                  <li><a href="#">Deep Dropdown 2</a></li>
+                  <li><a href="#">Deep Dropdown 3</a></li>
+                  <li><a href="#">Deep Dropdown 4</a></li>
+                  <li><a href="#">Deep Dropdown 5</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Dropdown 2</a></li>
+              <li><a href="#">Dropdown 3</a></li>
+              <li><a href="#">Dropdown 4</a></li>
+            </ul>
+          </li>
+
+
+          <li><a href="{{url_for('projects')}}">Projects</a></li>
+
+       
+          <li><a href="{{url_for('contact')}}">Contact</a></li>
+        </ul>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <div class="breadcrumbs d-flex align-items-center" style="background-image: url('{{url_for('static', filename='assets/img/breadcrumbs-bg.jpg')}}');">
+
+      <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
+
+        <h2>About</h2>
+        <ol>
+          <li><a href="index.html">Home</a></li>
+          <li>About</li>
+        </ol>
+
+      </div>
+    </div><!-- End Breadcrumbs -->
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      <div class="container" data-aos="fade-up">
+    
+        <div class="row position-relative">
+    
+          <!-- Image side -->
+          <div class="col-lg-7 about-img" style="background-image: url('{{url_for('static', filename='assets/img/about.jpg')}}');"></div>
+    
+          <!-- Text side -->
+          <div class="col-lg-7">
+            <h2>Building Excellence Since 1988</h2>
+            <div class="our-story">
+              <h4>Est. 1988</h4>
+              <h3>Our Story</h3>
+              <p>Tomide Construction Group (TCG) has been delivering top-quality construction services for over three decades. From residential projects to commercial developments, we combine expertise, innovation, and dedication to bring your vision to life.</p>
+              
+              <ul>
+                <li><i class="bi bi-check-circle"></i> <span>Experienced Engineers and Skilled Craftsmen</span></li>
+                <li><i class="bi bi-check-circle"></i> <span>High-Quality Materials and Sustainable Practices</span></li>
+                <li><i class="bi bi-check-circle"></i> <span>On-Time Project Delivery with Transparent Communication</span></li>
+              </ul>
+    
+              <p>Our commitment is to provide reliable, safe, and innovative construction solutions. Every project we undertake is handled with professionalism and attention to detail, ensuring your satisfaction from start to finish.</p>
+    
+              <div class="watch-video d-flex align-items-center position-relative">
+                <i class="bi bi-play-circle"></i>
+                <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="glightbox stretched-link">Watch Our Journey</a>
+              </div>
+            </div>
+          </div>
+    
+        </div>
+    
+      </div>
+    </section>
+    
+    <!-- End About Section -->
+
+    <!-- ======= Stats Counter Section ======= -->
+    <section id="stats-counter" class="stats-counter section-bg">
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item d-flex align-items-center w-100 h-100">
+              <i class="bi bi-emoji-smile color-blue flex-shrink-0"></i>
+              <div>
+                <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1"
+                  class="purecounter"></span>
+                <p>Happy Clients</p>
+              </div>
+            </div>
+          </div><!-- End Stats Item -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item d-flex align-items-center w-100 h-100">
+              <i class="bi bi-journal-richtext color-orange flex-shrink-0"></i>
+              <div>
+                <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1"
+                  class="purecounter"></span>
+                <p>Projects</p>
+              </div>
+            </div>
+          </div><!-- End Stats Item -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item d-flex align-items-center w-100 h-100">
+              <i class="bi bi-headset color-green flex-shrink-0"></i>
+              <div>
+                <span data-purecounter-start="0" data-purecounter-end="1463" data-purecounter-duration="1"
+                  class="purecounter"></span>
+                <p>Hours Of Support</p>
+              </div>
+            </div>
+          </div><!-- End Stats Item -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item d-flex align-items-center w-100 h-100">
+              <i class="bi bi-people color-pink flex-shrink-0"></i>
+              <div>
+                <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1"
+                  class="purecounter"></span>
+                <p>Hard Workers</p>
+              </div>
+            </div>
+          </div><!-- End Stats Item -->
+
+        </div>
+
+      </div>
+    </section><!-- End Stats Counter Section -->
+
+    <!-- ======= Alt Services Section ======= -->
+    <section id="alt-services" class="alt-services">
+      <div class="container" data-aos="fade-up">
+    
+        <div class="row justify-content-around gy-4">
+          <!-- Image side -->
+          <div class="col-lg-6 img-bg" style="background-image: url('{{url_for('static', filename='assets/img/alt-services.jpg')}}');"  data-aos="zoom-in" data-aos-delay="100"></div>
+    
+          <!-- Services side -->
+          <div class="col-lg-5 d-flex flex-column justify-content-center">
+            <h3>Expert Services Tailored for Your Construction Needs</h3>
+            <p>At Tomide Construction Group (TCG), we provide a wide range of professional construction services designed to ensure quality, safety, and timely delivery for every project.</p>
+    
+            <!-- Icon Boxes -->
+            <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="100">
+              <i class="bi bi-easel flex-shrink-0"></i>
+              <div>
+                <h4><a href="#" class="stretched-link">Residential Construction</a></h4>
+                <p>From single-family homes to multi-unit residential buildings, we build durable, modern, and functional spaces for your comfort.</p>
+              </div>
+            </div><!-- End Icon Box -->
+    
+            <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="200">
+              <i class="bi bi-patch-check flex-shrink-0"></i>
+              <div>
+                <h4><a href="#" class="stretched-link">Commercial Projects</a></h4>
+                <p>We handle offices, retail spaces, and commercial complexes, delivering projects on time with professional standards and attention to detail.</p>
+              </div>
+            </div><!-- End Icon Box -->
+    
+            <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="300">
+              <i class="bi bi-brightness-high flex-shrink-0"></i>
+              <div>
+                <h4><a href="#" class="stretched-link">Renovations & Remodeling</a></h4>
+                <p>Transform your existing spaces with our renovation and remodeling services, improving functionality, aesthetics, and value.</p>
+              </div>
+            </div><!-- End Icon Box -->
+    
+            <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="400">
+              <i class="bi bi-tools flex-shrink-0"></i>
+              <div>
+                <h4><a href="#" class="stretched-link">Maintenance & Repairs</a></h4>
+                <p>We offer reliable maintenance and repair services to ensure your property remains safe, functional, and visually appealing year-round.</p>
+              </div>
+            </div><!-- End Icon Box -->
+    
+          </div>
+        </div>
+    
+      </div>
+    </section>
+    
+    <!-- End Alt Services Section -->
+
+    <!-- ======= Alt Services Section 2 ======= -->
+    <section id="alt-services-2" class="alt-services section-bg">
+      <div class="container" data-aos="fade-up">
+    
+        <div class="row justify-content-around gy-4">
+          <div class="col-lg-5 d-flex flex-column justify-content-center">
+            <h3>Innovative Solutions to Elevate Your Business</h3>
+            <p>We provide top-notch services designed to help your business grow efficiently. Our team ensures quality, reliability, and innovative approaches in every project.</p>
+    
+            <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="100">
+              <i class="bi bi-easel flex-shrink-0"></i>
+              <div>
+                <h4><a href="" class="stretched-link">Creative Design</a></h4>
+                <p>We craft visually stunning designs that leave a lasting impression and resonate with your audience effectively.</p>
+              </div>
+            </div><!-- End Icon Box -->
+    
+            <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="200">
+              <i class="bi bi-patch-check flex-shrink-0"></i>
+              <div>
+                <h4><a href="" class="stretched-link">Reliable Support</a></h4>
+                <p>Our dedicated support team ensures your operations run smoothly with timely solutions and expert advice.</p>
+              </div>
+            </div><!-- End Icon Box -->
+    
+            <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="300">
+              <i class="bi bi-brightness-high flex-shrink-0"></i>
+              <div>
+                <h4><a href="" class="stretched-link">Advanced Technology</a></h4>
+                <p>We integrate cutting-edge technologies to optimize your workflow and deliver measurable results efficiently.</p>
+              </div>
+            </div><!-- End Icon Box -->
+    
+            <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="400">
+              <i class="bi bi-brightness-high flex-shrink-0"></i>
+              <div>
+                <h4><a href="" class="stretched-link">Tailored Strategies</a></h4>
+                <p>Our personalized strategies ensure solutions are aligned with your goals, maximizing growth and impact.</p>
+              </div>
+            </div><!-- End Icon Box -->
+          </div>
+    
+          <div class="col-lg-6 img-bg" style="background-image: url('{{url_for('static', filename='assets/img/alt-services-2.jpg')}}');"  data-aos="zoom-in"
+            data-aos-delay="100"></div>
+        </div>
+    
+      </div>
+    </section>
+    <!-- End Alt Services Section 2 -->
+    
+    <!-- End Alt Services Section 2 -->
+
+    <!-- ======= Our Team Section ======= -->
+    <section id="team" class="team">
+      <div class="container" data-aos="fade-up">
+    
+        <div class="section-header">
+          <h2>Meet Our Team</h2>
+          <p>Our dedicated team combines expertise, creativity, and passion to deliver exceptional results for our clients. Get to know the people behind our success.</p>
+        </div>
+    
+        <div class="row gy-5">
+    
+          <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="100">
+            <div class="member-img">
+              <img src="{{url_for('static', filename= 'assets/img/team/team-1.jpg')}}" class="img-fluid" alt="Walter White">
+              <div class="social">
+                <a href="#"><i class="bi bi-twitter"></i></a>
+                <a href="#"><i class="bi bi-facebook"></i></a>
+                <a href="#"><i class="bi bi-instagram"></i></a>
+                <a href="#"><i class="bi bi-linkedin"></i></a>
+              </div>
+            </div>
+            <div class="member-info text-center">
+              <h4>Walter White</h4>
+              <span>Chief Executive Officer</span>
+              <p>Walter leads our company with vision and dedication, ensuring strategic growth and operational excellence.</p>
+            </div>
+          </div><!-- End Team Member -->
+    
+          <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="200">
+            <div class="member-img">
+              <img src="{{url_for('static', filename= 'assets/img/team/team-2.jpg')}}" class="img-fluid" alt="Sarah Johnson">
+              <div class="social">
+                <a href="#"><i class="bi bi-twitter"></i></a>
+                <a href="#"><i class="bi bi-facebook"></i></a>
+                <a href="#"><i class="bi bi-instagram"></i></a>
+                <a href="#"><i class="bi bi-linkedin"></i></a>
+              </div>
+            </div>
+            <div class="member-info text-center">
+              <h4>Sarah Johnson</h4>
+              <span>Product Manager</span>
+              <p>Sarah oversees product development and ensures each project meets high standards of quality and efficiency.</p>
+            </div>
+          </div><!-- End Team Member -->
+    
+          <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="300">
+            <div class="member-img">
+              <img src="{{url_for('static', filename= 'assets/img/team/team-3.jpg')}}" class="img-fluid" alt="William Anderson">
+              <div class="social">
+                <a href="#"><i class="bi bi-twitter"></i></a>
+                <a href="#"><i class="bi bi-facebook"></i></a>
+                <a href="#"><i class="bi bi-instagram"></i></a>
+                <a href="#"><i class="bi bi-linkedin"></i></a>
+              </div>
+            </div>
+            <div class="member-info text-center">
+              <h4>William Anderson</h4>
+              <span>Chief Technology Officer</span>
+              <p>William drives our technology strategy and leads our team in building innovative, scalable solutions.</p>
+            </div>
+          </div><!-- End Team Member -->
+    
+          <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="400">
+            <div class="member-img">
+              <img src="{{url_for('static', filename= 'assets/img/team/team-4.jpg')}}" class="img-fluid" alt="Amanda Jepson">
+              <div class="social">
+                <a href="#"><i class="bi bi-twitter"></i></a>
+                <a href="#"><i class="bi bi-facebook"></i></a>
+                <a href="#"><i class="bi bi-instagram"></i></a>
+                <a href="#"><i class="bi bi-linkedin"></i></a>
+              </div>
+            </div>
+            <div class="member-info text-center">
+              <h4>Amanda Jepson</h4>
+              <span>Accountant</span>
+              <p>Amanda manages finances with precision and ensures transparency and accuracy in all accounting processes.</p>
+            </div>
+          </div><!-- End Team Member -->
+    
+          <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="500">
+            <div class="member-img">
+              <img src="{{url_for('static', filename= 'assets/img/team/team-5.jpg')}}" class="img-fluid" alt="Brian Doe">
+              <div class="social">
+                <a href="#"><i class="bi bi-twitter"></i></a>
+                <a href="#"><i class="bi bi-facebook"></i></a>
+                <a href="#"><i class="bi bi-instagram"></i></a>
+                <a href="#"><i class="bi bi-linkedin"></i></a>
+              </div>
+            </div>
+            <div class="member-info text-center">
+              <h4>Brian Doe</h4>
+              <span>Marketing Specialist</span>
+              <p>Brian develops marketing strategies that increase brand visibility and drive engagement across multiple channels.</p>
+            </div>
+          </div><!-- End Team Member -->
+    
+          <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="600">
+            <div class="member-img">
+              <img src="{{url_for('static', filename= 'assets/img/team/team-6.jpg')}}" class="img-fluid" alt="Josepha Palas">
+              <div class="social">
+                <a href="#"><i class="bi bi-twitter"></i></a>
+                <a href="#"><i class="bi bi-facebook"></i></a>
+                <a href="#"><i class="bi bi-instagram"></i></a>
+                <a href="#"><i class="bi bi-linkedin"></i></a>
+              </div>
+            </div>
+            <div class="member-info text-center">
+              <h4>Josepha Palas</h4>
+              <span>Operations Manager</span>
+              <p>Josepha ensures smooth day-to-day operations and oversees processes to maintain high efficiency and quality.</p>
+            </div>
+          </div><!-- End Team Member -->
+    
+        </div>
+    
+      </div>
+    </section>
+    
+    <!-- End Our Team Section -->
+
+    <!-- ======= Testimonials Section ======= -->
+    {%include "users/testimonial.html"%}
+    <!-- End Testimonials Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  {%include "users/footer.html"%}
+
+  <!-- End Footer -->
+
+  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="{{url_for('static', filename='assets/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+  <script src="{{url_for('static', filename='assets/vendor/aos/aos.js')}}"></script>
+  <script src="{{url_for('static', filename='assets/vendor/glightbox/js/glightbox.min.js')}}"></script>
+  <script src="{{url_for('static', filename='assets/vendor/isotope-layout/isotope.pkgd.min.js')}}"></script>
+  <script src="{{url_for('static', filename='assets/vendor/swiper/swiper-bundle.min.js')}}"></script>
+  <script src="{{url_for('static', filename='assets/vendor/purecounter/purecounter_vanilla.js')}}"></script>
+  <script src="{{url_for('static', filename='assets/vendor/php-email-form/validate.js')}}"></script>
+  <!-- Template Main JS File -->
+  <script src="{{url_for('static', filename='assets/js/main.js')}}"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Quotes - TCG Admin</title>
+
+    <link 
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" 
+        rel="stylesheet">
+        <!-- <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      integrity="sha512-rXo+Q2jvYQ0y1rFqFy1b4Io7fp6nK6Y0E8dZmx3r9qJv60wJX0ZkVgldfXzP9QH9EhJp+5q6T2pWmH0vgI3RA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    /> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='fontawesome/css/all.min.css') }}">
+
+    <style>
+        body { background: #f5f6fa; }
+        .container-box { max-width: 1200px; margin: auto; }
+        table { border-radius: 10px; overflow: hidden; }
+    </style>
+</head>
+
+<body>
+
+<div class="container container-box mt-5">
+
+  <div class="col-md-12 d-flex justify-content-between">
+    <a style="border: none; color: black;" href="{{url_for('admin_dashboard')}}" class="me-5"> <i class="fa-solid fa-arrow-left"></i></a>
+
+    <h2 class="mb-4">Customer Quote Requests</h2>
+  </div>
+  {% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    {% for category, msg in messages %}
+      <div class="alert alert-{{ category }} alert-dismissible fade show text-center" role="alert" style="margin:0;">
+        {{ msg }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+      </div>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+    <div class="card shadow-sm">
+        <div class="card-body">
+
+            <div class="table-responsive">
+                <table class="table table-bordered table-striped align-middle">
+
+                    <thead class="table-dark">
+                        <tr>
+                            <th>#</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Service</th>
+                            <th>Subcategory</th>
+                            <th>Message</th>
+                            <th>Date</th>
+                            <th>Assign Staff</th>
+                            <th>Status</th>
+
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        {% for q in quotes %}
+                        <tr>
+                            <td>{{ loop.index }}</td>
+                            <td>{{ q.name }}</td>
+                            <td>{{ q.email }}</td>
+                            <td>{{ q.phone }}</td>
+                            <td>{{ q.category.name }}</td>
+                            <td>{{ q.subcategory.name }}</td>
+                            <td>{{ q.message }}</td>
+                            
+                            <td>{{ q.created_at.strftime('%Y-%m-%d') }}</td>
+                            <td>
+                                <form method="POST" action="{{ url_for('admin_assign_staff', request_id=q.id) }}">
+                                    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                                    {% if q.assignment_status == "assigned" %}
+                                    <span class="badge bg-primary text-white">Assigned to {{ q.assigned_staff.full_name }}</span>
+                                    {% elif q.assignment_status == "completed" %}
+                                    <span class="badge bg-success text-white">Completed by {{ q.assigned_staff.full_name }}</span>
+                                    {%else%}
+                                    <select name="staff_id" class="form-select form-select-sm">
+                                        <option value="">Select Staff</option>
+                                        {% for staff in all_staff %}
+                                        <option value="{{ staff.id }}" {% if q.assigned_staff_id == staff.id %}selected{% endif %}>
+                                            {{ staff.full_name }} ({{ staff.role }})
+                                        </option>
+                                        {% endfor %}
+                                    </select>
+                                    <button type="submit" class="btn btn-sm btn-primary mt-1">Assign</button>
+                                    {% endif %}
+                                </form>
+                            </td>
+                            
+                            <td>
+                                {% if q.assignment_status == "unassigned" %}
+                                    <span class="badge bg-warning">Unassigned</span>
+                            
+                                {% elif q.assignment_status == "assigned" %}
+                                    <span class="badge bg-info text-dark">Assigned</span>
+                            
+                                {% elif q.assignment_status == "completed" %}
+                                    <span class="badge bg-success">Completed</span>
+                                {% endif %}
+                            </td>
+                            
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                    
+
+                    <!-- <tbody>
+                        {% for q in quotes %}
+                        <tr>
+                            <td>{{ loop.index }}</td>
+                            <td>{{ q.name }}</td>
+                            <td>{{ q.email }}</td>
+                            <td>{{ q.phone }}</td>
+                            <td>{{ q.category.name }}</td>
+                            <td>{{ q.subcategory.name}}</td>
+                            <td>{{ q.message }}</td>
+                            <td>{{ q.created_at.strftime('%Y-%m-%d') }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody> -->
+
+                </table>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<script 
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js">
+</script>
+
+</body>
+</html>
+

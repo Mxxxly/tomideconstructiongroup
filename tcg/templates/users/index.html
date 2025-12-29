@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>TCG</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{{url_for('static', filename='assets/img/favicon.png')}}" rel="icon">
+  <link href="{{url_for('static', filename='assets/img/favicon.png')}}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Roboto:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{{url_for('static', filename='assets/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+  <link href="{{url_for('static', filename='assets/vendor/bootstrap-icons/bootstrap-icons.css')}}" rel="stylesheet">
+  <link href="{{url_for('static', filename='assets/vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet">
+  <link href="{{url_for('static', filename='assets/vendor/aos/aos.css')}}" rel="stylesheet">
+  <link href="{{url_for('static', filename='assets/vendor/glightbox/css/glightbox.min.css')}}" rel="stylesheet">
+  <link href="{{url_for('static', filename='assets/vendor/swiper/swiper-bundle.min.css')}}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{{url_for('static', filename='assets/css/main.css')}}" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: UpConstruction - v1.3.0
+  * Template URL: https://bootstrapmade.com/upconstruction-bootstrap-construction-website-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header d-flex align-items-center">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+      <a href="{{url_for('home_page')}}" class="logo d-flex align-items-center">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="{{url_for('static', filename='assets/img/logo.png')}}" alt=""> -->
+        <h1>TCG<span>.</span></h1>
+      </a>
+
+      <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+      <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a href="{{url_for('home_page')}}" class="active">Home</a></li>
+          <li><a href="{{url_for('about')}}">About</a></li>
+          <!-- <li><a href="services.html">Services</a></li> -->
+             <li class="dropdown"><a href="{{url_for('services')}}"><span>Services</span> <i
+                class="bi bi-chevron-down dropdown-indicator"></i></a>
+            <ul>
+              <li><a href="#">Dropdown 1</a></li>
+              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i
+                    class="bi bi-chevron-down dropdown-indicator"></i></a>
+                <ul>
+                  <li><a href="#">Deep Dropdown 1</a></li>
+                  <li><a href="#">Deep Dropdown 2</a></li>
+                  <li><a href="#">Deep Dropdown 3</a></li>
+                  <li><a href="#">Deep Dropdown 4</a></li>
+                  <li><a href="#">Deep Dropdown 5</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Dropdown 2</a></li>
+              <li><a href="#">Dropdown 3</a></li>
+              <li><a href="#">Dropdown 4</a></li>
+            </ul>
+          </li>
+
+
+          <li><a href="{{url_for('projects')}}">Projects</a></li>
+
+       
+          <li><a href="{{url_for('contact')}}">Contact</a></li>
+        </ul>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="hero">
+
+    <div class="info d-flex align-items-center">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-6 text-center">
+            <h2 data-aos="fade-down">Welcome to <span>Tomide Construction Group</span></h2>
+            <p data-aos="fade-up">We build durable, modern, and innovative structures that stand the test of time. From residential projects to large-scale developments, we deliver quality workmanship with a commitment to excellence.</p>
+            <a data-aos="fade-up" data-aos-delay="200" href="#get-started" class="btn-get-started">Get Started</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="hero-carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+
+      <div class="carousel-item active" style="background-image: url('{{url_for('static', filename='assets/img/hero-carousel/hero-carousel-1.jpg')}}')">
+      </div>
+      <div class="carousel-item"
+     style="background-image: url('{{ url_for('static', filename='assets/img/hero-carousel/hero-carousel-2.jpg') }}')">
+</div>
+
+      <!-- <div class="carousel-item" style="background-image: url_for(url(static/assets/img/hero-carousel/hero-carousel-2.jpg))"></div> -->
+      <div class="carousel-item" style="background-image: url('{{url_for('static', filename='assets/img/hero-carousel/hero-carousel-3.jpg')}}')"></div>
+      <div class="carousel-item" style="background-image: url('{{url_for('static', filename='assets/img/hero-carousel/hero-carousel-4.jpg')}}')"></div>
+      <div class="carousel-item" style="background-image: url('{{url_for('static', filename='assets/img/hero-carousel/hero-carousel-5.jpg')}}')"></div>
+
+      <a class="carousel-control-prev" href="#hero-carousel" role="button" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+      </a>
+
+      <a class="carousel-control-next" href="#hero-carousel" role="button" data-bs-slide="next">
+        <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+      </a>
+
+    </div>
+
+  </section><!-- End Hero Section -->
+
+  <main id="main">
+
+    <!-- ======= Get Started Section ======= -->
+    <section id="get-started" class="get-started section-bg">
+      <div class="container">
+
+        <div class="row justify-content-between gy-4">
+
+          <div class="col-lg-6 d-flex align-items-center" data-aos="fade-up">
+            <div class="content">
+              <h3>Quality Construction You Can Trust.</h3>
+              <p>At Tomide Construction Group, we deliver reliable, modern, and durable building solutions. 
+                Our team combines expertise, innovation, and precision to bring your vision to life whether it’s 
+                residential, commercial, or industrial development.</p>
+              <p>From planning and design to execution and finishing, we ensure every project meets the highest 
+                standards of safety, quality, and professionalism. Let us help you build with confidence.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-5" data-aos="fade">
+                              {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                      {% for category, message in messages %}
+                        <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                          {{ message }}
+                          <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                        </div>
+                      {% endfor %}
+                    {% endif %}
+                  {% endwith %}
+            <form method="POST" action="{{ url_for('get_quote') }}">
+              {{ form.hidden_tag() }}
+          
+              <h3>Get a Quote</h3>
+              <p>Tell us about your project and we’ll provide a detailed quote.</p>
+          
+              <div class="row gy-3">
+          
+                  <!-- Name -->
+                  <div class="col-md-12">
+                      {{ form.name.label }}
+                      {{ form.name(class="form-control", placeholder="Your Name") }}
+                      {% for error in form.name.errors %}
+                          <small class="text-danger">{{ error }}</small>
+                      {% endfor %}
+                  </div>
+          
+                  <!-- Email -->
+                  <div class="col-md-12">
+                      {{ form.email.label }}
+                      {{ form.email(class="form-control", placeholder="Your Email") }}
+                      {% for error in form.email.errors %}
+                          <small class="text-danger">{{ error }}</small>
+                      {% endfor %}
+                  </div>
+
+                  <div class="col-md-12">
+                    {{ form.phone.label }}
+                    {{ form.phone(class="form-control", placeholder="Your Phone Number") }}
+                    {% for error in form.phone.errors %}
+                          <small class="text-danger">{{ error }}</small>
+                      {% endfor %}
+                </div>
+          
+                  <!-- Category -->
+                  <div class="col-md-12">
+                      <label for="category">Select Category</label>
+                      {{ form.category(class="form-control", id="category") }}
+
+                  </div>
+          
+                  <!-- Subcategory -->
+                  <div class="col-md-12">
+                      <label for="subcategory">Select Subcategory</label>
+                      {{ form.subcategory(class="form-control", id="subcategory") }}
+                  </div>
+          
+                  <!-- Message -->
+                  <div class="col-md-12">
+                      {{ form.message.label }}
+                      {{ form.message(class="form-control", rows="6", placeholder="Describe your project") }}
+                      {% for error in form.message.errors %}
+                          <small class="text-danger">{{ error }}</small>
+                      {% endfor %}
+                  </div>
+          
+                  <!-- Submit -->
+                  <div class="col-md-12 text-center">
+                      <button type="submit" class="btn btn-warning">Get a Quote</button>
+                  </div>
+          
+              </div>
+          </form>
+          
+          
+          </div><!-- End Quote Form -->
+
+        </div>
+
+      </div>
+    </section><!-- End Get Started Section -->
+
+    <!-- ======= Constructions Section ======= -->
+    <section id="constructions" class="constructions">
+      <div class="container" data-aos="fade-up">
+    
+        <div class="section-header">
+          <h2>Our Construction Services</h2>
+          <p>We deliver high-quality, durable and innovative building solutions from residential projects to large-scale commercial developments. Every project is executed with precision, professionalism and a commitment to excellence.</p>
+        </div>
+    
+        <div class="row gy-4">
+    
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="card-item">
+              <div class="row">
+                <div class="col-xl-5">
+                  <div class="card-bg" style="background-image: url('{{url_for('static', filename='assets/img/constructions-4.jpg')}}') ;"></div>
+                </div>
+                <div class="col-xl-7 d-flex align-items-center">
+                  <div class="card-body">
+                    <h4 class="card-title">Residential Building Projects</h4>
+                    <p>We design and construct modern, functional, and energy-efficient homes tailored to the needs of families and private property developers. From foundations to finishing, we ensure quality every step of the way.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div><!-- End Card Item -->
+    
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="card-item">
+              <div class="row">
+                <div class="col-xl-5">
+                  <div class="card-bg" style="background-image: url('{{url_for('static', filename='assets/img/constructions-2.jpg')}}');"></div>
+                </div>
+                <div class="col-xl-7 d-flex align-items-center">
+                  <div class="card-body">
+                    <h4 class="card-title">Commercial Construction</h4>
+                    <p>We deliver durable office complexes, retail spaces, and industrial facilities with strict adherence to standards and timelines. Our team ensures that your commercial space supports growth and productivity.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div><!-- End Card Item -->
+    
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="card-item">
+              <div class="row">
+                <div class="col-xl-5">
+                  <div class="card-bg" style="background-image: url('{{url_for('static', filename='assets/img/constructions-3.jpg')}}')"></div>
+                </div>
+                <div class="col-xl-7 d-flex align-items-center">
+                  <div class="card-body">
+                    <h4 class="card-title">Renovation & Remodeling</h4>
+                    <p>Whether you're upgrading a home, office, or commercial building, we provide comprehensive renovation services that enhance functionality, improve aesthetics, and increase property value.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div><!-- End Card Item -->
+    
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="card-item">
+              <div class="row">
+                <div class="col-xl-5">
+                  <div class="card-bg" style="background-image: url('{{url_for('static', filename='assets/img/constructions-1.jpg')}}');"></div>
+                </div>
+                <div class="col-xl-7 d-flex align-items-center">
+                  <div class="card-body">
+                    <h4 class="card-title">Project Management & Consultancy</h4>
+                    <p>We provide expert project planning, supervision, and execution to ensure that every building project meets regulatory standards, budgets, and schedules  without compromising quality.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div><!-- End Card Item -->
+    
+        </div>
+    
+      </div>
+    </section>
+    
+
+    <!-- ======= Services Section ======= -->
+    {%include "users/service.html"%}
+
+    
+
+    <!-- ======= Alt Services Section ======= -->
+  <section id="alt-services" class="alt-services">
+  <div class="container" data-aos="fade-up">
+
+    <div class="row justify-content-around gy-4">
+      <div class="col-lg-6 img-bg" style="background-image: url('{{url_for('static', filename='assets/img/alt-services.jpg')}}');" data-aos="zoom-in"
+        data-aos-delay="100"></div>
+
+      <div class="col-lg-5 d-flex flex-column justify-content-center">
+        <h3>Quality Construction Solutions You Can Trust</h3>
+        <p>We combine modern building techniques with proven craftsmanship to deliver projects that are durable, functional, and tailored to our clients’ goals. Every step of our process is driven by professionalism and attention to detail.</p>
+
+        <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="100">
+          <i class="bi bi-easel flex-shrink-0"></i>
+          <div>
+            <h4><a href="" class="stretched-link">Innovative Design Planning</a></h4>
+            <p>Our team creates detailed and practical architectural plans that balance aesthetics, safety, and long-term durability for every project.</p>
+          </div>
+        </div><!-- End Icon Box -->
+
+        <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="200">
+          <i class="bi bi-patch-check flex-shrink-0"></i>
+          <div>
+            <h4><a href="" class="stretched-link">High-Standard Construction</a></h4>
+            <p>We follow strict industry standards, using quality materials and skilled craftsmanship to ensure every structure stands the test of time.</p>
+          </div>
+        </div><!-- End Icon Box -->
+
+        <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="300">
+          <i class="bi bi-brightness-high flex-shrink-0"></i>
+          <div>
+            <h4><a href="" class="stretched-link">Sustainable Building Solutions</a></h4>
+            <p>Our projects integrate energy-efficient methods and environmentally conscious practices to promote sustainability without compromising quality.</p>
+          </div>
+        </div><!-- End Icon Box -->
+
+        <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="400">
+          <i class="bi bi-brightness-high flex-shrink-0"></i>
+          <div>
+            <h4><a href="" class="stretched-link">Professional Project Management</a></h4>
+            <p>We oversee every phase of your project—from planning to completion—ensuring timelines are met and budgets are maintained with full transparency.</p>
+          </div>
+        </div><!-- End Icon Box -->
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+    <!-- ======= Features Section ======= -->
+    <section id="features" class="features section-bg">
+      <div class="container" data-aos="fade-up">
+    
+        <ul class="nav nav-tabs row g-2 d-flex">
+    
+          <li class="nav-item col-3">
+            <a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#tab-1">
+              <h4>Design Planning</h4>
+            </a>
+          </li><!-- End tab nav item -->
+    
+          <li class="nav-item col-3">
+            <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-2">
+              <h4>Construction</h4>
+            </a>
+          </li><!-- End tab nav item -->
+    
+          <li class="nav-item col-3">
+            <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-3">
+              <h4>Project Management</h4>
+            </a>
+          </li><!-- End tab nav item -->
+    
+          <li class="nav-item col-3">
+            <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-4">
+              <h4>Quality Assurance</h4>
+            </a>
+          </li><!-- End tab nav item -->
+    
+        </ul>
+    
+        <div class="tab-content">
+    
+          <div class="tab-pane active show" id="tab-1">
+            <div class="row">
+              <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center"
+                data-aos="fade-up" data-aos-delay="100">
+                <h3>Creative and Efficient Designs</h3>
+                <p class="fst-italic">
+                  Our architectural team creates innovative, practical, and sustainable designs tailored to your vision and budget.
+                </p>
+                <ul>
+                  <li><i class="bi bi-check2-all"></i> Detailed architectural and structural planning.</li>
+                  <li><i class="bi bi-check2-all"></i> Compliance with building regulations and standards.</li>
+                  <li><i class="bi bi-check2-all"></i> Designs optimized for energy efficiency and functionality.</li>
+                </ul>
+              </div>
+              <div class="col-lg-6 order-1 order-lg-2 text-center" data-aos="fade-up" data-aos-delay="200">
+                <img src="assets/img/features-1.jpg" alt="" class="img-fluid">
+              </div>
+            </div>
+          </div><!-- End tab content item -->
+    
+          <div class="tab-pane" id="tab-2">
+            <div class="row">
+              <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center">
+                <h3>Reliable Construction Services</h3>
+                <p class="fst-italic">
+                  We execute residential, commercial, and industrial projects with precision, using high-quality materials and skilled labor.
+                </p>
+                <ul>
+                  <li><i class="bi bi-check2-all"></i> Timely project delivery.</li>
+                  <li><i class="bi bi-check2-all"></i> Skilled and certified construction team.</li>
+                  <li><i class="bi bi-check2-all"></i> Sustainable and safe building practices.</li>
+                  <li><i class="bi bi-check2-all"></i> Cost-effective and transparent project execution.</li>
+                </ul>
+              </div>
+              <div class="col-lg-6 order-1 order-lg-2 text-center">
+                <img src="assets/img/features-2.jpg" alt="" class="img-fluid">
+              </div>
+            </div>
+          </div><!-- End tab content item -->
+    
+          <div class="tab-pane" id="tab-3">
+            <div class="row">
+              <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center">
+                <h3>Professional Project Management</h3>
+                <ul>
+                  <li><i class="bi bi-check2-all"></i> Planning and scheduling of all project phases.</li>
+                  <li><i class="bi bi-check2-all"></i> Coordination with contractors and stakeholders.</li>
+                  <li><i class="bi bi-check2-all"></i> Continuous monitoring to ensure timelines and budgets are met.</li>
+                </ul>
+                <p class="fst-italic">
+                  Our management team ensures smooth project execution, reducing risks and optimizing resources for successful outcomes.
+                </p>
+              </div>
+              <div class="col-lg-6 order-1 order-lg-2 text-center">
+                <img src="assets/img/features-3.jpg" alt="" class="img-fluid">
+              </div>
+            </div>
+          </div><!-- End tab content item -->
+    
+          <div class="tab-pane" id="tab-4">
+            <div class="row">
+              <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center">
+                <h3>Quality Assurance and Safety</h3>
+                <p class="fst-italic">
+                  Every project undergoes strict quality checks and safety inspections to guarantee long-lasting results and client satisfaction.
+                </p>
+                <ul>
+                  <li><i class="bi bi-check2-all"></i> Comprehensive material and workmanship inspections.</li>
+                  <li><i class="bi bi-check2-all"></i> Safety compliance for all construction sites.</li>
+                  <li><i class="bi bi-check2-all"></i> Continuous improvement and quality monitoring.</li>
+                </ul>
+              </div>
+              <div class="col-lg-6 order-1 order-lg-2 text-center">
+                <img src="assets/img/features-4.jpg" alt="" class="img-fluid">
+              </div>
+            </div>
+          </div><!-- End tab content item -->
+    
+        </div>
+    
+      </div>
+    </section>
+    
+
+    <!-- ======= Our Projects Section ======= -->
+    {%include "users/pro.html"%}
+
+<!-- End Our Projects Section -->
+    <!-- End Our Projects Section -->
+    
+
+    <!-- ======= Testimonials Section ======= -->
+    {%include "users/testimonial.html"%}
+    <!-- End Testimonials Section -->
+
+    <!-- ======= Recent Blog Posts Section ======= -->
+
+    <!-- End Recent Blog Posts Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  {%include "users/footer.html"%}
+  <!-- End Footer -->
+
+  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="{{url_for('static', filename='assets/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+  <script src="{{url_for('static', filename='assets/vendor/aos/aos.js')}}"></script>
+  <script src="{{url_for('static', filename='assets/vendor/glightbox/js/glightbox.min.js')}}"></script>
+  <script src="{{url_for('static', filename='assets/vendor/isotope-layout/isotope.pkgd.min.js')}}"></script>
+  <script src="{{url_for('static', filename='assets/vendor/swiper/swiper-bundle.min.js')}}"></script>
+  <script src="{{url_for('static', filename='assets/vendor/purecounter/purecounter_vanilla.js')}}"></script>
+  <script src="{{url_for('static', filename='assets/vendor/php-email-form/validate.js')}}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{{url_for('static', filename='assets/js/main.js')}}"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <script>
+    document.getElementById('category').addEventListener('change', function() {
+        let categoryId = this.value;
+        let subSelect = document.getElementById('subcategory');
+    
+        // Reset subcategory
+        subSelect.innerHTML = '<option value="">Select Subcategory</option>';
+    
+        if (!categoryId) return;
+    
+        fetch('/get_subcategories/' + categoryId)
+            .then(response => response.json())
+            .then(data => {
+                data.forEach(item => {
+                    let option = document.createElement('option');
+                    option.value = item.id;
+                    option.textContent = item.name;
+                    subSelect.appendChild(option);
+                });
+            })
+            .catch(error => console.log(error));
+    });
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>UpConstruction Bootstrap Template - Services</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+
+  <!-- Favicons -->
+  <link href="{{url_for('static', filename='assets/img/favicon.png')}}" rel="icon">
+  <link href="{{url_for('static', filename='assets/img/apple-touch-icon.png')}}" rel="apple-touch-icon">
+
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Roboto:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{{url_for('static', filename='assets/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+  <link href="{{url_for('static', filename='assets/vendor/bootstrap-icons/bootstrap-icons.css')}}" rel="stylesheet">
+  <link href="{{url_for('static', filename='assets/vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet">
+  <link href="{{url_for('static', filename='assets/vendor/aos/aos.css')}}" rel="stylesheet">
+  <link href="{{url_for('static', filename='assets/vendor/glightbox/css/glightbox.min.css')}}" rel="stylesheet">
+  <link href="{{url_for('static', filename='assets/vendor/swiper/swiper-bundle.min.css')}}" rel="stylesheet">
+
+
+
+  <link href="{{url_for('static', filename='assets/css/main.css')}}" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header d-flex align-items-center">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.png" alt=""> -->
+        <h1>UpConstruction<span>.</span></h1>
+      </a>
+
+      <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+      <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a href="{{url_for('home_page')}}" class="active">Home</a></li>
+          <li><a href="{{url_for('about')}}">About</a></li>
+          <!-- <li><a href="services.html">Services</a></li> -->
+             <li class="dropdown"><a href="{{url_for('services')}}"><span>Services</span> <i
+                class="bi bi-chevron-down dropdown-indicator"></i></a>
+            <ul>
+              <li><a href="#">Dropdown 1</a></li>
+              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i
+                    class="bi bi-chevron-down dropdown-indicator"></i></a>
+                <ul>
+                  <li><a href="#">Deep Dropdown 1</a></li>
+                  <li><a href="#">Deep Dropdown 2</a></li>
+                  <li><a href="#">Deep Dropdown 3</a></li>
+                  <li><a href="#">Deep Dropdown 4</a></li>
+                  <li><a href="#">Deep Dropdown 5</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Dropdown 2</a></li>
+              <li><a href="#">Dropdown 3</a></li>
+              <li><a href="#">Dropdown 4</a></li>
+            </ul>
+          </li>
+
+
+          <li><a href="{{url_for('projects')}}">Projects</a></li>
+
+       
+          <li><a href="{{url_for('contact')}}">Contact</a></li>
+        </ul>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <div class="breadcrumbs d-flex align-items-center" style="background-image: url('{{url_for('static', filename='assets/img/breadcrumbs-bg.jpg')}}');">
+
+      <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
+
+        <h2>Services</h2>
+        <ol>
+          <li><a href="index.html">Home</a></li>
+          <li>Services</li>
+        </ol>
+
+      </div>
+    </div><!-- End Breadcrumbs -->
+
+    <!-- ======= Services Section ======= -->
+    {%include "users/service.html"%}
+
+    <!-- End Services Section -->
+
+    <!-- ======= Servie Cards Section ======= -->
+    <section id="services-cards" class="services-cards">
+      <div class="container" data-aos="fade-up">
+    
+        <div class="row gy-4">
+    
+          <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="100">
+            <h3>Construction Planning</h3>
+            <p>We provide comprehensive planning services to ensure your construction project is efficient, cost-effective, and on schedule.</p>
+            <ul class="list-unstyled">
+              <li><i class="bi bi-check2"></i> <span>Detailed project scheduling and budgeting</span></li>
+              <li><i class="bi bi-check2"></i> <span>Site assessments and feasibility studies</span></li>
+              <li><i class="bi bi-check2"></i> <span>Customized planning solutions for each client</span></li>
+            </ul>
+          </div><!-- End feature item-->
+    
+          <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="200">
+            <h3>Architectural Design</h3>
+            <p>Our design team creates functional, modern, and aesthetically pleasing spaces tailored to your vision and requirements.</p>
+            <ul class="list-unstyled">
+              <li><i class="bi bi-check2"></i> <span>3D modeling and visualization</span></li>
+              <li><i class="bi bi-check2"></i> <span>Interior and exterior design planning</span></li>
+              <li><i class="bi bi-check2"></i> <span>Innovative solutions for complex projects</span></li>
+            </ul>
+          </div><!-- End feature item-->
+    
+          <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="300">
+            <h3>Project Management</h3>
+            <p>We manage all aspects of your construction project, coordinating teams and resources to deliver results on time and within budget.</p>
+            <ul class="list-unstyled">
+              <li><i class="bi bi-check2"></i> <span>On-site supervision and quality control</span></li>
+              <li><i class="bi bi-check2"></i> <span>Resource allocation and risk management</span></li>
+              <li><i class="bi bi-check2"></i> <span>Regular progress reporting to clients</span></li>
+            </ul>
+          </div><!-- End feature item-->
+    
+          <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="400">
+            <h3>Maintenance & Support</h3>
+            <p>We offer post-construction support and maintenance services to ensure your property remains in top condition for years to come.</p>
+            <ul class="list-unstyled">
+              <li><i class="bi bi-check2"></i> <span>Routine inspections and repairs</span></li>
+              <li><i class="bi bi-check2"></i> <span>Emergency maintenance services</span></li>
+              <li><i class="bi bi-check2"></i> <span>Customized maintenance plans for clients</span></li>
+            </ul>
+          </div><!-- End feature item-->
+    
+        </div>
+    
+      </div>
+    </section>
+    
+    <!-- End Servie Cards Section -->
+
+    <!-- ======= Alt Services Section 2 ======= -->
+    <section id="alt-services-2" class="alt-services section-bg">
+      <div class="container" data-aos="fade-up">
+    
+        <div class="row justify-content-around gy-4">
+          <div class="col-lg-5 d-flex flex-column justify-content-center">
+            <h3>Innovative Solutions to Elevate Your Business</h3>
+            <p>We provide top-notch services designed to help your business grow efficiently. Our team ensures quality, reliability, and innovative approaches in every project.</p>
+    
+            <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="100">
+              <i class="bi bi-easel flex-shrink-0"></i>
+              <div>
+                <h4><a href="" class="stretched-link">Creative Design</a></h4>
+                <p>We craft visually stunning designs that leave a lasting impression and resonate with your audience effectively.</p>
+              </div>
+            </div><!-- End Icon Box -->
+    
+            <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="200">
+              <i class="bi bi-patch-check flex-shrink-0"></i>
+              <div>
+                <h4><a href="" class="stretched-link">Reliable Support</a></h4>
+                <p>Our dedicated support team ensures your operations run smoothly with timely solutions and expert advice.</p>
+              </div>
+            </div><!-- End Icon Box -->
+    
+            <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="300">
+              <i class="bi bi-brightness-high flex-shrink-0"></i>
+              <div>
+                <h4><a href="" class="stretched-link">Advanced Technology</a></h4>
+                <p>We integrate cutting-edge technologies to optimize your workflow and deliver measurable results efficiently.</p>
+              </div>
+            </div><!-- End Icon Box -->
+    
+            <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="400">
+              <i class="bi bi-brightness-high flex-shrink-0"></i>
+              <div>
+                <h4><a href="" class="stretched-link">Tailored Strategies</a></h4>
+                <p>Our personalized strategies ensure solutions are aligned with your goals, maximizing growth and impact.</p>
+              </div>
+            </div><!-- End Icon Box -->
+          </div>
+    
+          <div class="col-lg-6 img-bg" style="background-image: url('{{url_for('static', filename='assets/img/alt-services-2.jpg')}}');"  data-aos="zoom-in"
+            data-aos-delay="100"></div>
+        </div>
+    
+      </div>
+    </section>
+    <!-- End Alt Services Section 2 -->
+
+    <!-- ======= Alt Services Section ======= -->
+    <section id="alt-services" class="alt-services">
+      <div class="container" data-aos="fade-up">
+    
+        <div class="row justify-content-around gy-4">
+          <!-- Image side -->
+          <div class="col-lg-6 img-bg" style="background-image: url('{{url_for('static', filename='assets/img/alt-services.jpg')}}');"  data-aos="zoom-in" data-aos-delay="100"></div>
+    
+          <!-- Services side -->
+          <div class="col-lg-5 d-flex flex-column justify-content-center">
+            <h3>Expert Services Tailored for Your Construction Needs</h3>
+            <p>At Tomide Construction Group (TCG), we provide a wide range of professional construction services designed to ensure quality, safety, and timely delivery for every project.</p>
+    
+            <!-- Icon Boxes -->
+            <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="100">
+              <i class="bi bi-easel flex-shrink-0"></i>
+              <div>
+                <h4><a href="#" class="stretched-link">Residential Construction</a></h4>
+                <p>From single-family homes to multi-unit residential buildings, we build durable, modern, and functional spaces for your comfort.</p>
+              </div>
+            </div><!-- End Icon Box -->
+    
+            <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="200">
+              <i class="bi bi-patch-check flex-shrink-0"></i>
+              <div>
+                <h4><a href="#" class="stretched-link">Commercial Projects</a></h4>
+                <p>We handle offices, retail spaces, and commercial complexes, delivering projects on time with professional standards and attention to detail.</p>
+              </div>
+            </div><!-- End Icon Box -->
+    
+            <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="300">
+              <i class="bi bi-brightness-high flex-shrink-0"></i>
+              <div>
+                <h4><a href="#" class="stretched-link">Renovations & Remodeling</a></h4>
+                <p>Transform your existing spaces with our renovation and remodeling services, improving functionality, aesthetics, and value.</p>
+              </div>
+            </div><!-- End Icon Box -->
+    
+            <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="400">
+              <i class="bi bi-tools flex-shrink-0"></i>
+              <div>
+                <h4><a href="#" class="stretched-link">Maintenance & Repairs</a></h4>
+                <p>We offer reliable maintenance and repair services to ensure your property remains safe, functional, and visually appealing year-round.</p>
+              </div>
+            </div><!-- End Icon Box -->
+    
+          </div>
+        </div>
+    
+      </div>
+    </section>
+    <!-- End Alt Services Section -->
+
+    <!-- ======= Testimonials Section ======= -->
+    {%include "users/testimonial.html"%}
+
+    <!-- End Testimonials Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  {%include "users/footer.html"%}
+
+  <!-- End Footer -->
+
+  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+
+  <script src="{{url_for('static', filename='assets/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+  <script src="{{url_for('static', filename='assets/vendor/aos/aos.js')}}"></script>
+  <script src="{{url_for('static', filename='assets/vendor/glightbox/js/glightbox.min.js')}}"></script>
+  <script src="{{url_for('static', filename='assets/vendor/isotope-layout/isotope.pkgd.min.js')}}"></script>
+  <script src="{{url_for('static', filename='assets/vendor/swiper/swiper-bundle.min.js')}}"></script>
+  <script src="{{url_for('static', filename='assets/vendor/purecounter/purecounter_vanilla.js')}}"></script>
+  <script src="{{url_for('static', filename='assets/vendor/php-email-form/validate.js')}}"></script>
+
+
+
+
+  <!-- Template Main JS File -->
+  <script src="{{url_for('static', filename='assets/js/main.js')}}"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TCG Admin Dashboard</title>
+
+    <!-- Bootstrap 5 -->
+    <link 
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" 
+        rel="stylesheet"
+    >
+
+    <style>
+        body {
+            background-color: #f5f6fa;
+        }
+        .sidebar {
+            width: 230px;
+            height: 100vh;
+            position: fixed;
+            left: 0;
+            top: 0;
+            background: #1e1e2d;
+            padding-top: 30px;
+            color: #fff;
+        }
+        .sidebar a {
+            color: #ddd;
+            text-decoration: none;
+            padding: 12px 20px;
+            display: block;
+            font-size: 15px;
+        }
+        .sidebar a:hover {
+            background: #2e2e42;
+            color: #fff;
+        }
+        .content {
+            margin-left: 250px;
+            padding: 30px;
+        }
+        .card {
+            border-radius: 10px;
+        }
+        .navbar-brand {
+            color: #fff !important;
+            font-weight: bold;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+        <h4 class="text-center mb-4">TCG Admin</h4>
+
+        <a href="{{url_for('admin_dashboard')}}">Dashboard</a>
+        <a href="/admin/manage-services/">Manage Services</a>
+        <a href="/admin/view-quotes/">View Quotes Request</a>
+        <a href="{{url_for('admin_contact_msg')}}">View Contact Request</a>
+      
+
+        <a href="{{url_for('admin_manage_staff')}}">Manage Staffs</a>
+        <a href="{{url_for('admin_logout')}}">Logout</a>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="content">
+
+        <!-- Page Title -->
+        <h2 class="mb-4">Admin Dashboard</h2>
+
+        <div class="row">
+
+            <!-- Card 1 -->
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Service Categories</h5>
+                        <p class="text-muted">Add or manage construction service categories</p>
+                        <a href="/admin/manage-services/" class="btn btn-primary btn-sm">
+                            Manage Services
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Quote Requests</h5>
+                        <p class="text-muted">View all customer construction quote submissions.</p>
+                        <a href="/admin/view-quotes/" class="btn btn-primary btn-sm">
+                            View Quotes
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Admin Settings</h5>
+                        <p class="text-muted">Configure application preferences.</p>
+                        <a href="#" class="btn btn-secondary btn-sm disabled">Coming Soon</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Footer -->
+        <footer class="mt-5 text-center text-muted">
+            <p>© 2025 Tomide Construction Group — Admin Panel</p>
+        </footer>
+
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script 
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+</body>
+</html>
