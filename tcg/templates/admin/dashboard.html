@@ -1,130 +1,244 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TCG Admin Dashboard</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TCG Admin</title>
 
-    <!-- Bootstrap 5 -->
-    <link 
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" 
-        rel="stylesheet"
-    >
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
-    <style>
-        body {
-            background-color: #f5f6fa;
-        }
-        .sidebar {
-            width: 230px;
-            height: 100vh;
-            position: fixed;
-            left: 0;
-            top: 0;
-            background: #1e1e2d;
-            padding-top: 30px;
-            color: #fff;
-        }
-        .sidebar a {
-            color: #ddd;
-            text-decoration: none;
-            padding: 12px 20px;
-            display: block;
-            font-size: 15px;
-        }
-        .sidebar a:hover {
-            background: #2e2e42;
-            color: #fff;
-        }
-        .content {
-            margin-left: 250px;
-            padding: 30px;
-        }
-        .card {
-            border-radius: 10px;
-        }
-        .navbar-brand {
-            color: #fff !important;
-            font-weight: bold;
-            font-size: 20px;
-        }
-    </style>
+<style>
+:root{
+    --yellow-soft:#FFF6DB;
+    --yellow-main:#F4C430;
+    --yellow-dark:#D4A017;
+    --text-dark:#2b2b2b;
+}
+
+body{
+    background: var(--yellow-soft);
+    color: var(--text-dark);
+    font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Header */
+.header{
+    background:#fff;
+    border-bottom:1px solid #eee;
+    padding:18px 24px;
+    position:sticky;
+    top:0;
+    z-index:100;
+}
+
+.brand{
+    font-weight:700;
+    letter-spacing:0.5px;
+}
+
+/* Navigation */
+.nav-link{
+    color:#555;
+    font-weight:500;
+    margin-right:12px;
+}
+.nav-link:hover{
+    color:var(--yellow-dark);
+}
+
+/* Dashboard container */
+.dashboard{
+    max-width:1100px;
+    margin:auto;
+    padding:32px 20px;
+}
+
+/* Welcome */
+.welcome{
+    margin-bottom:30px;
+}
+.welcome h2{
+    font-weight:700;
+}
+.welcome p{
+    color:#666;
+}
+
+/* Stat cards */
+.stat{
+    background:#fff;
+    border-radius:14px;
+    padding:22px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.06);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+.stat i{
+    font-size:28px;
+    color:var(--yellow-dark);
+}
+.stat h4{
+    margin:0;
+    font-weight:700;
+}
+.stat span{
+    color:#777;
+    font-size:14px;
+}
+
+/* Action cards */
+.action{
+    background:#fff;
+    border-radius:16px;
+    padding:26px;
+    height:100%;
+    box-shadow:0 15px 30px rgba(0,0,0,0.07);
+    transition:all 0.25s ease;
+}
+.action:hover{
+    transform:translateY(-6px);
+}
+.action h5{
+    font-weight:600;
+}
+.action p{
+    color:#666;
+    font-size:15px;
+}
+.action a{
+    background:var(--yellow-main);
+    color:#000;
+    font-weight:600;
+    border:none;
+}
+.action a:hover{
+    background:var(--yellow-dark);
+    color:#000;
+}
+
+/* Footer */
+footer{
+    text-align:center;
+    margin-top:60px;
+    color:#777;
+    font-size:14px;
+}
+
+/* Mobile tweaks */
+@media(max-width:768px){
+    .header{
+        text-align:center;
+    }
+}
+</style>
 </head>
 
 <body>
 
-    <!-- SIDEBAR -->
-    <div class="sidebar">
-        <h4 class="text-center mb-4">TCG Admin</h4>
+<!-- Header -->
+<div class="header d-flex flex-wrap justify-content-between align-items-center">
+    <div class="brand">TCG Admin Panel</div>
+    <div class="d-flex flex-wrap">
+        <a class="nav-link" href="{{url_for('admin_dashboard')}}">Dashboard</a>
+        <a class="nav-link" href="/admin/manage-services/">Services</a>
+        <a class="nav-link" href="/admin/view-quotes/">Quotes</a>
+        <a class="nav-link" href="{{url_for('admin_contact_msg')}}">Contacts</a>
+        <a class="nav-link" href="{{url_for('admin_manage_staff')}}">Staff</a>
+        <a class="nav-link text-danger" href="{{url_for('admin_logout')}}">Logout</a>
+    </div>
+</div>
 
-        <a href="{{url_for('admin_dashboard')}}">Dashboard</a>
-        <a href="/admin/manage-services/">Manage Services</a>
-        <a href="/admin/view-quotes/">View Quotes Request</a>
-        <a href="{{url_for('admin_contact_msg')}}">View Contact Request</a>
-      
+<!-- Main -->
+<div class="dashboard">
 
-        <a href="{{url_for('admin_manage_staff')}}">Manage Staffs</a>
-        <a href="{{url_for('admin_logout')}}">Logout</a>
+    <!-- Welcome -->
+    <div class="welcome">
+        <h2>Welcome back 👋</h2>
+        <p>Manage Tomide Construction Group from one clean dashboard.</p>
     </div>
 
-    <!-- MAIN CONTENT -->
-    <div class="content">
-
-        <!-- Page Title -->
-        <h2 class="mb-4">Admin Dashboard</h2>
-
-        <div class="row">
-
-            <!-- Card 1 -->
-            <div class="col-md-6 mb-4">
-                <div class="card shadow-sm">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Service Categories</h5>
-                        <p class="text-muted">Add or manage construction service categories</p>
-                        <a href="/admin/manage-services/" class="btn btn-primary btn-sm">
-                            Manage Services
-                        </a>
-                    </div>
+    <!-- Stats -->
+    <div class="row g-4 mb-4">
+        <div class="col-md-6 col-lg-3">
+            <div class="stat">
+                <div>
+                    <h4>Services</h4>
+                    <span>Total categories</span>
                 </div>
+                <i class="fa-solid fa-helmet-safety"></i>
             </div>
-
-            <!-- Card 2 -->
-            <div class="col-md-6 mb-4">
-                <div class="card shadow-sm">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Quote Requests</h5>
-                        <p class="text-muted">View all customer construction quote submissions.</p>
-                        <a href="/admin/view-quotes/" class="btn btn-primary btn-sm">
-                            View Quotes
-                        </a>
-                    </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+            <div class="stat">
+                <div>
+                    <h4>Quotes</h4>
+                    <span>Customer requests</span>
                 </div>
+                <i class="fa-solid fa-file-invoice"></i>
             </div>
-
-            <!-- Card 3 -->
-            <!-- <div class="col-md-4 mb-4">
-                <div class="card shadow-sm">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Admin Settings</h5>
-                        <p class="text-muted">Configure application preferences.</p>
-                        <a href="#" class="btn btn-secondary btn-sm disabled">Coming Soon</a>
-                    </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+            <div class="stat">
+                <div>
+                    <h4>Messages</h4>
+                    <span>Contact forms</span>
                 </div>
-            </div> -->
+                <i class="fa-solid fa-envelope"></i>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+            <div class="stat">
+                <div>
+                    <h4>Staff</h4>
+                    <span>Team members</span>
+                </div>
+                <i class="fa-solid fa-users"></i>
+            </div>
+        </div>
+    </div>
 
+    <!-- Actions -->
+    <div class="row g-4">
+        <div class="col-md-6 col-lg-4">
+            <div class="action">
+                <h5>Manage Services</h5>
+                <p>Add, edit or remove construction service categories.</p>
+                <a href="/admin/manage-services/" class="btn btn-sm mt-2">Open</a>
+            </div>
         </div>
 
-        <!-- Footer -->
-        <footer class="mt-5 text-center text-muted">
-            <p>© 2025 Tomide Construction Group — Admin Panel</p>
-        </footer>
+        <div class="col-md-6 col-lg-4">
+            <div class="action">
+                <h5>Quote Requests</h5>
+                <p>Review and respond to client quote submissions.</p>
+                <a href="/admin/view-quotes/" class="btn btn-sm mt-2">View</a>
+            </div>
+        </div>
 
+        <div class="col-md-6 col-lg-4">
+            <div class="action">
+                <h5>Contact Messages</h5>
+                <p>Read all customer contact messages.</p>
+                <a href="{{url_for('admin_contact_msg')}}" class="btn btn-sm mt-2">Check</a>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+            <div class="action">
+                <h5>Staff Management</h5>
+                <p>Control staff access and profiles.</p>
+                <a href="{{url_for('admin_manage_staff')}}" class="btn btn-sm mt-2">Manage</a>
+            </div>
+        </div>
     </div>
 
-    <!-- Bootstrap JS -->
-    <script 
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js">
-    </script>
+    <footer>
+        © 2025 Tomide Construction Group — Internal Admin
+    </footer>
+
+</div>
 
 </body>
 </html>
